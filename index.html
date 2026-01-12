@@ -533,11 +533,14 @@
                                 class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
                         </div>
                         <div class="fade-in card p-6 text-center">
-                            <div
-                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
-                                HS</div>
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/hector-santiago.jpg" alt="Hector Santiago"
+                                    class="w-full h-full rounded-full object-cover shadow-sm">
+                            </div>
                             <h4 class="text-lg font-bold gopha-primary-blue mb-1">Hector Santiago</h4>
                             <p class="gopha-accent-blue font-medium text-sm">Latin America</p>
+                            <button onclick="openModal('hector-santiago-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
                         </div>
                         <div class="fade-in card p-6 text-center">
                             <div class="w-16 h-16 mx-auto mb-3">
@@ -1558,6 +1561,51 @@
                 <a href="https://www.linkedin.com/in/rajeev-prasad-660a159/" target="_blank" rel="noopener noreferrer"
                     class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     title="View Rajeev Prasad's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="hector-santiago-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('hector-santiago-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/hector-santiago.jpg" alt="Hector Santiago"
+                    class="w-24 h-24 rounded-full object-cover shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Dr. Hector Santiago</h3>
+                <p class="gopha-accent-blue font-medium">Latin America Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Dr. Hector Santiago was born in Ponce, Puerto Rico. He has degrees in physics (BS), biomedical
+                        sciences (Ph.D.), and optometry (OD), and has dedicated over 40 years to optometric education,
+                        serving as Dean at two optometric institutions.
+                    </li>
+                    <li>
+                        He has led over 25 humanitarian clinics in Latin America, providing eye care to over 20,000
+                        patients.
+                    </li>
+                    <li>
+                        He received the Brien Holden Humanitarian Award and is a Lions Clubs International Ambassador of
+                        Goodwill.
+                    </li>
+                    <li>
+                        Dr. Santiago has authored over 100 publications, posters, and presentations. He is a board
+                        member of VOSH/International and Latinos En Optometry (LEO), and a member of GOPHA.
+                    </li>
+                    <li>
+                        Dr. Santiago is a full professor and research director at the Inter American University of
+                        Puerto Rico School of Optometry.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/hector-santiago-90980324/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Dr. Hector Santiago's LinkedIn Profile">
                     <i data-lucide="linkedin" class="w-6 h-6"></i>
                 </a>
             </div>
