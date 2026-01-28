@@ -516,11 +516,14 @@
                             <p class="gopha-accent-blue font-medium text-sm">Australia</p>
                         </div>
                         <div class="fade-in card p-6 text-center">
-                            <div
-                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
-                                HA</div>
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/hassan-awada.jpg" alt="Hassan Awada"
+                                    class="w-full h-full rounded-full object-cover shadow-sm">
+                            </div>
                             <h4 class="text-lg font-bold gopha-primary-blue mb-1">Hassan Awada</h4>
                             <p class="gopha-accent-blue font-medium text-sm">Middle East & Eastern Mediterranean</p>
+                            <button onclick="openModal('hassan-awada-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
                         </div>
                         <div class="fade-in card p-6 text-center">
                             <div class="w-16 h-16 mx-auto mb-3">
@@ -1509,6 +1512,52 @@
                     rel="noopener noreferrer"
                     class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     title="View Dr. Hector Santiago's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="hassan-awada-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('hassan-awada-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/hassan-awada.jpg" alt="Hassan Awada"
+                    class="w-24 h-24 rounded-full object-cover shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Hassan Awada</h3>
+                <p class="gopha-accent-blue font-medium">Middle East & Eastern Mediterranean Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Mr. Hassan Awada is an optometrist and ocularist with extensive clinical and leadership
+                        experience across the Middle East and Europe. He holds a Bachelor’s degree in Optometry from the
+                        University of Paris and runs specialized ocularist practices in both Nice and Beirut.
+                    </li>
+                    <li>
+                        Working across eight countries in the Middle East, Mr. Awada focuses on advanced eye care,
+                        prosthetic eye services, and improving access to quality optometry in the region.
+                    </li>
+                    <li>
+                        He is the former President and current Director General of the Eastern Mediterranean Council of
+                        Optometry (EMCO), where he has played a key role in professional development, education, and
+                        regional collaboration.
+                    </li>
+                    <li>
+                        Mr. Awada has also served on the Executive Committee of the World Council of Optometry (WCO),
+                        contributing to global strategies for vision care and professional standards.
+                    </li>
+                    <li>
+                        In addition, he represents GOPHA (Global Optometry Alliance) for the Eastern Mediterranean
+                        region, working to integrate optometry within public health and to address preventable vision
+                        impairment on a population level.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/hassan-awada-bb7a854b/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Hassan Awada's LinkedIn Profile">
                     <i data-lucide="linkedin" class="w-6 h-6"></i>
                 </a>
             </div>
