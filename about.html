@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PZHMB6WW');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | GOPHA</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description"
+        content="Meet the global leadership team of the Global Optometry Public Health Alliance (GOPHA).">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --gopha-primary-blue: #365a6d;
+            --gopha-accent-blue: #017cbd;
+            --gopha-light-grey: #f8f9fa;
+            --gopha-dark-grey: #6c757d;
+        }
+
+        .gopha-primary-blue {
+            color: var(--gopha-primary-blue);
+        }
+
+        .gopha-accent-blue {
+            color: var(--gopha-accent-blue);
+        }
+
+        .bg-gopha-primary-blue {
+            background-color: var(--gopha-primary-blue);
+        }
+
+        .bg-gopha-accent-blue {
+            background-color: var(--gopha-accent-blue);
+        }
+
+        .bg-gopha-light-grey {
+            background-color: var(--gopha-light-grey);
+        }
+
+        .border-gopha-accent-blue {
+            border-color: var(--gopha-accent-blue);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, var(--gopha-primary-blue), var(--gopha-accent-blue));
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, var(--gopha-accent-blue), var(--gopha-primary-blue));
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--gopha-accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gopha-primary-blue);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--gopha-primary-blue);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .md\:block {
+                display: block;
+            }
+
+            .md\:hidden {
+                display: none;
+            }
+
+            .md\:flex {
+                display: flex;
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:flex {
+                display: flex;
+            }
+
+            .lg\:hidden {
+                display: none;
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 0.5rem;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .nav-current {
+            color: var(--gopha-accent-blue) !important;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FCPDSNT6D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FCPDSNT6D');
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZHMB6WW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logo.png" alt="GOPHA Logo" class="h-12">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html"
+                        class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">Home</a>
+                    <a href="about.html"
+                        class="nav-link nav-current px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">About
+                        Us</a>
+                    <a href="resources.html"
+                        class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">News
+                        & Resources</a>
+                    <a href="membership.html"
+                        class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">Membership</a>
+                    <a href="research.html"
+                        class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">Research</a>
+                    <a href="contact.html"
+                        class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-600 text-gray-700">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex">
+                    <a href="membership.html" class="btn btn-primary">Join The Alliance</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="lg:hidden border-t border-gray-200 hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                    <a href="about.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-blue-600 bg-gray-50">About
+                        Us</a>
+                    <a href="resources.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">News
+                        & Resources</a>
+                    <a href="membership.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Membership</a>
+                    <a href="research.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Research</a>
+                    <a href="contact.html"
+                        class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                    <div class="px-3 py-2">
+                        <a href="membership.html" class="btn btn-primary w-full text-center">Join The Alliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="bg-gopha-primary-blue text-white py-16">
+            <div class="container text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+                <p class="text-xl max-w-2xl mx-auto text-blue-100">Getting to know the people behind the mission to
+                    transform global eye health.</p>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="section-padding bg-white">
+            <div class="container">
+                <div class="fade-in text-center mb-12">
+                    <h2 class="text-4xl font-bold gopha-primary-blue mb-4">Our Global Leadership Team</h2>
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                        Our alliance is led by a dedicated team of professionals with extensive experience in global
+                        public eye health and optometry. They are leading GOPHA's mission to transform global eye
+                        health.
+                    </p>
+                </div>
+
+                <!-- Chairperson -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold gopha-primary-blue mb-8 text-center">Chair</h3>
+                    <div class="fade-in card p-6 flex flex-col items-center justify-center">
+                        <div
+                            class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                            KN
+                        </div>
+                        <h4 class="text-xl font-bold gopha-primary-blue mb-1 text-center">Kovin Naidoo</h4>
+                        <p class="gopha-accent-blue font-medium mb-2 text-center">Chairperson</p>
+                    </div>
+                </div>
+
+                <!-- Regional Representatives -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold gopha-primary-blue mb-8 text-center">Regional Representatives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/tuwani-rasengane.jpg" alt="Tuwani Rasengane"
+                                    class="w-full h-full rounded-full object-cover object-[center_10%] shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Tuwani Rasengane</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Africa</p>
+                            <button onclick="openModal('tuwani-rasengane-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div
+                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                KOT</div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Kah Ooi Tan</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">East Asia</p>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div
+                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                CH</div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Charlie Ho</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Southeast Asia</p>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/uchechukwu-levi-osuagwu.jpg" alt="Uchechukwu Levi Osuagwu"
+                                    class="w-full h-full rounded-full object-cover object-top shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Uchechukwu Levi Osuagwu</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Australia</p>
+                            <button onclick="openModal('uchechukwu-levi-osuagwu-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/hassan-awada.jpg" alt="Hassan Awada"
+                                    class="w-full h-full rounded-full object-cover object-top shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Hassan Awada</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Middle East & Eastern Mediterranean</p>
+                            <button onclick="openModal('hassan-awada-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/eva-lazuka-nicoulaud.jpg" alt="Eva Lazuka-Nicoulaud"
+                                    class="w-full h-full rounded-full object-cover object-[center_10%] shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Eva Lazuka-Nicoulaud</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Europe</p>
+                            <button onclick="openModal('eva-lazuka-nicoulaud-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/hector-santiago.jpg" alt="Hector Santiago"
+                                    class="w-full h-full rounded-full object-cover object-top shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Hector Santiago</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Latin America</p>
+                            <button onclick="openModal('hector-santiago-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/scott-mundle.jpg" alt="Scott Mundle"
+                                    class="w-full h-full rounded-full object-cover shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Scott Mundle</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">North America</p>
+                            <button onclick="openModal('scott-mundle-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/rajeev-prasad.jpg" alt="Rajeev Prasad"
+                                    class="w-full h-full rounded-full object-cover shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Rajeev Prasad</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">South Asia</p>
+                            <button onclick="openModal('rajeev-prasad-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Members -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold gopha-primary-blue mb-8 text-center">Other Roles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="fade-in card p-6 text-center">
+                            <div
+                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                PG</div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Pirindha Govender-Poonsamy</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Secretary</p>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div
+                                class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                AAA</div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Ameer Abou Adela</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Member Organisations Coordinator</p>
+                        </div>
+                        <div class="fade-in card p-6 text-center">
+                            <div class="w-16 h-16 mx-auto mb-3">
+                                <img src="Images/benjamin-chandra.jpg" alt="Benjamin Chandra"
+                                    class="w-full h-full rounded-full object-cover object-[center_10%] shadow-sm">
+                            </div>
+                            <h4 class="text-lg font-bold gopha-primary-blue mb-1">Benjamin Chandra</h4>
+                            <p class="gopha-accent-blue font-medium text-sm">Research Associate</p>
+                            <button onclick="openModal('benjamin-chandra-bio')"
+                                class="mt-3 text-sm gopha-accent-blue hover:underline font-semibold">Read Bio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section-padding gradient-primary text-white">
+            <div class="container text-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold mb-6">Help Us Transform Global Eye Health</h2>
+                    <p class="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                        Join our global network of optometry professionals and help us create a world
+                        where preventable blindness is eliminated and quality eye care is accessible to
+                        all.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="membership.html"
+                            class="btn bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+                            Become a Member
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline text-lg px-8 py-3">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gopha-primary-blue text-white">
+        <div class="container py-12">
+            <!-- Top Grid Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Column 1: Logo and Mission -->
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-3 mb-4">
+                        <img src="images/gopha-logo.png" alt="GOPHA Logo" class="h-12 bg-white rounded-full p-1">
+                    </a>
+                    <p class="text-blue-100 mb-4">
+                        A global alliance dedicated to building stronger public health
+                        solutions for eye care worldwide.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-blue-200"></i>
+                            <a href="mailto:info.gopha@gmail.com"
+                                class="text-blue-100 hover:text-white transition-colors">info.gopha@gmail.com</a>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-200 mt-1"></i>
+                            <span class="text-blue-100">Suite 004, 45 Richeford Circle, Ridgeside, Umhlanga, South
+                                Africa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-100 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="membership.html"
+                                class="text-blue-100 hover:text-white transition-colors">Membership</a></li>
+                        <li><a href="research.html"
+                                class="text-blue-100 hover:text-white transition-colors">Research</a>
+                        </li>
+                        <li><a href="contact.html" class="text-blue-100 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Partner Organizations -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Partner Organizations</h3>
+                    <p class="text-blue-200 text-sm">Our key partners</p>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.who.int/initiatives/specs-2030" target="_blank"
+                                class="text-blue-100 hover:text-white transition-colors flex items-center space-x-1"><span>WHO
+                                    SPECS 2030</span><i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                        <li><a href="https://worldcouncilofoptometry.info/" target="_blank"
+                                class="text-blue-100 hover:text-white transition-colors flex items-center space-x-1"><span>World
+                                    Council of Optometry</span><i data-lucide="external-link" class="w-3 h-3"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="text-center mt-12 pt-8 border-t border-blue-600">
+                <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/company/gopha-vision/" target="_blank" rel="noopener noreferrer"
+                        class="text-blue-100 hover:text-white transition-colors"><i data-lucide="linkedin"
+                            class="w-6 h-6"></i></a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mt-8 pt-8 border-t border-blue-600 text-center">
+                <p class="text-blue-100 text-sm">
+                    © 2026 Global Optometry Public Health Alliance. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bio Modals -->
+    <div id="scott-mundle-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('scott-mundle-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/scott-mundle.jpg" alt="Scott Mundle"
+                    class="w-24 h-24 rounded-full object-cover shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Scott Mundle</h3>
+                <p class="gopha-accent-blue font-medium">North America Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Dr. Scott Mundle, a 1983 graduate of the University of Waterloo, Canada began his involvement in
+                        organized Optometry early in his career as a Councillor for the Manitoba Association of
+                        Optometrists (MAO) in 1986, including being President from 1992-93.
+                    </li>
+                    <li>
+                        Dr. Mundle became the Manitoba Councilor to the Canadian Association of Optometrists (CAO) in
+                        1996 and he served on a variety of national committees, including as Chair of the Publications
+                        Committee and the Public Visual Welfare Committee. Added to this, Dr Mundle was the first
+                        non-American appointed to the Licensure and Regulation Committee for the American Optometric
+                        Association (AOA), St. Louis, MO.
+                    </li>
+                    <li>
+                        Scott Mundle was President of the CAO from 2002 to 2004. He became the Canadian Delegate to the
+                        World Council of Optometry (WCO) from 2009 – 2015, President Elect from 2015 – 2017 and
+                        President from 2017 – 2019.
+                    </li>
+                    <li>
+                        Dr. Mundle was the WCO Delegate to The International Agency for the Prevention of Blindness
+                        (IAPB) (2016 – 2024) and was an Executive Member of the IAPB (2021 – 2023).
+                    </li>
+                    <li>
+                        Married to University of Waterloo classmate Dr. Michelle Georgi, the couple has three children,
+                        Cameron, Kirsten, and Kent. On chance that any other free time presents itself, Dr Mundle used
+                        to run marathons, but after hip replacement surgery, he has become a road cyclist.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/scott-mundle-2731991b/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Scott Mundle's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="benjamin-chandra-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('benjamin-chandra-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/benjamin-chandra.jpg" alt="Benjamin Chandra"
+                    class="w-24 h-24 rounded-full object-cover object-[center_10%] shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Benjamin Chandra</h3>
+                <p class="gopha-accent-blue font-medium">Research Associate</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Benji Chandra serves as an Associate Researcher with the Global Optometry Public Health Alliance
+                        (GOPHA), where he is currently the global study coordinator for the global optometry education
+                        mapping study.
+                    </li>
+                    <li>
+                        Currently living in the UK, Benji works as a Senior University Practitioner at the University of
+                        Huddersfield. He combines academic rigour with extensive clinical experience gained in
+                        specialist UK hospital clinics.
+                    </li>
+                    <li>
+                        His passion for global public health was cemented during educational initiatives in Belize,
+                        Uganda, and India, where he witnessed firsthand that empowering local professionals through
+                        education is the most powerful force for sustainable change.
+                    </li>
+                    <li>
+                        In addition to his research, Benji is the Head of Clinical Education at the Global Ophthalmic
+                        Institute and actively explores the use of generative AI to enhance education and productivity.
+                    </li>
+                    <li>
+                        Outside of work you can find him going to church, recording a podcast, learning chess, or rock
+                        climbing.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/benji-c/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Benjamin Chandra's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="tuwani-rasengane-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('tuwani-rasengane-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/tuwani-rasengane.jpg" alt="Tuwani Rasengane"
+                    class="w-24 h-24 rounded-full object-cover object-[center_10%] shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Prof. Tuwani Rasengane</h3>
+                <p class="gopha-accent-blue font-medium">Africa Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Prof. Tuwani Rasengane is Head of Optometry at the University of the Free State and Director of
+                        Optometric Services in the Free State Province, South Africa.
+                    </li>
+                    <li>
+                        She serves as Co-Chair of the WHO SPECS 2030 Workforce workstream and is the current interim
+                        African regional representative for GOPHA.
+                    </li>
+                    <li>
+                        Prof. Rasengane is a trustee of SightSavers, board member of VOSH International and the Global
+                        Ophthalmic Institute, and sits on the editorial boards of leading optometry journals.
+                    </li>
+                    <li>
+                        Her expertise spans child eye health, electrodiagnostics, and visual perception, with a strong
+                        focus on advancing global optometric education and public health.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/tuwani-rasengane-172a907b/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Prof. Tuwani Rasengane's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="eva-lazuka-nicoulaud-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('eva-lazuka-nicoulaud-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/eva-lazuka-nicoulaud.jpg" alt="Eva Lazuka-Nicoulaud"
+                    class="w-24 h-24 rounded-full object-cover object-[center_10%] shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Eva Lazuka-Nicoulaud</h3>
+                <p class="gopha-accent-blue font-medium">Europe Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Eva Lazuka-Nicoulaud is an international advocate for global eye health and Head of Advocacy and
+                        Partnerships for EMEA and APAC at the OneSight EssilorLuxottica Foundation. In her current role,
+                        Eva works with governments, institutions, and partners to advance initiatives such as WHO SPECS
+                        2030.
+                    </li>
+                    <li>
+                        At GOPHA, Eva is a co-founding and interim Board member representing Europe. She also serves on
+                        the Board of Trustees of the European Academy of Optometry and Optics (EAOO).
+                    </li>
+                    <li>
+                        In 2025, she played a key role in the first Global Child Eye Health Symposium and the inaugural
+                        Global URE Forum, fostering multi-stakeholder engagement.
+                    </li>
+                    <li>
+                        Her previous leadership roles include Director of the Vision Impact Institute for Europe and
+                        Africa, Global Head of Professional Affairs, Editor-in-Chief of the International Review of
+                        Ophthalmic Optics, and Global Head of New Developments.
+                    </li>
+                    <li>
+                        She has contributed several innovative products, patents, and publications, emphasizing vision
+                        as a human right and a vital component of health and sustainable development.
+                    </li>
+                    <li>
+                        Based in France, Eva enjoys outdoor sports and running half-marathons.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/eva-lazuka-nicoulaud-leadership-partnerships-advocacy-research-marketing-eyecare-impact-specs/"
+                    target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Eva Lazuka-Nicoulaud's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="rajeev-prasad-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('rajeev-prasad-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/rajeev-prasad.jpg" alt="Rajeev Prasad"
+                    class="w-24 h-24 rounded-full object-cover shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Rajeev Prasad</h3>
+                <p class="gopha-accent-blue font-medium">South Asia Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li><strong>Global Leadership:</strong> President-Elect of the World Council of Optometry (WCO),
+                        President of the Asia-Pacific Council of Optometry (APCO), and Secretary General of the Indian
+                        Optometric Association (IOA).</li>
+                    <li><strong>GOPHA Representative:</strong> Co-Founder and Interim Board Member, representing South
+                        Asia in global discussions on prevention and equity.</li>
+                    <li><strong>Extensive Experience:</strong> Over 28 years in clinical care, education, and policy
+                        advocacy, collaborating with the WHO, Lions International, and Special Olympics.</li>
+                    <li><strong>Educational Pioneer:</strong> Founded EyeGurukul, a digital platform facilitating 500+
+                        lectures for the optometry community.</li>
+                    <li><strong>Advocacy & Impact:</strong> Instrumental in establishing the Bihar Optometry Association
+                        and organizing screenings for 10,000+ children.</li>
+                    <li><strong>Recognition:</strong> Honored as Optometrist of the Year (2018, 2020) with service
+                        awards from Lions and Rotary International.</li>
+                    <li><strong>Professional Focus:</strong> Dedicated to low vision rehabilitation, neuro-optometry,
+                        and establishing vision as a fundamental human right.</li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/rajeev-prasad-660a159/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Rajeev Prasad's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="hector-santiago-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('hector-santiago-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/hector-santiago.jpg" alt="Hector Santiago"
+                    class="w-24 h-24 rounded-full object-cover object-top shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Dr. Hector Santiago</h3>
+                <p class="gopha-accent-blue font-medium">Latin America Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Dr. Hector Santiago was born in Ponce, Puerto Rico. He has degrees in physics (BS), biomedical
+                        sciences (Ph.D.), and optometry (OD), and has dedicated over 40 years to optometric education,
+                        serving as Dean at two optometric institutions.
+                    </li>
+                    <li>
+                        He has led over 25 humanitarian clinics in Latin America, providing eye care to over 20,000
+                        patients.
+                    </li>
+                    <li>
+                        He received the Brien Holden Humanitarian Award and is a Lions Clubs International Ambassador of
+                        Goodwill.
+                    </li>
+                    <li>
+                        Dr. Santiago has authored over 100 publications, posters, and presentations. He is a board
+                        member of VOSH/International and Latinos En Optometry (LEO), and a member of GOPHA.
+                    </li>
+                    <li>
+                        Dr. Santiago is a full professor and research director at the Inter American University of
+                        Puerto Rico School of Optometry.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/hector-santiago-90980324/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Dr. Hector Santiago's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="uchechukwu-levi-osuagwu-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('uchechukwu-levi-osuagwu-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/uchechukwu-levi-osuagwu.jpg" alt="Uchechukwu Levi Osuagwu"
+                    class="w-24 h-24 rounded-full object-cover object-top shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Associate Professor Uchechukwu Levi Osuagwu</h3>
+                <p class="gopha-accent-blue font-medium">Australia Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Associate Professor Uchechukwu Levi Osuagwu is an internationally recognised public health and
+                        vision science researcher at Western Sydney University, Australia. He serves as an Associate
+                        Professor of Rural Health at the Bathurst Rural Clinical School, where his work focuses on
+                        disease prevention, eye health, and community-driven solutions.
+                    </li>
+                    <li>
+                        Dr. Osuagwu’s research spans diabetes prevention, eye and vision health, mental health, and
+                        broader social determinants of health, with a strong emphasis on translating evidence into
+                        practical, community-based interventions.
+                    </li>
+                    <li>
+                        He has published over 100 peer-reviewed articles, with more than 86% appearing in high-impact
+                        international journals, and has secured over AUD $2.3 million in competitive research funding as
+                        a Chief Investigator.
+                    </li>
+                    <li>
+                        A Fellow of the American Academy of Optometry (FAAO), he currently serves as President of the
+                        Academy’s African Chapter and as Director of Research and Advocacy for the African Council of
+                        Optometry.
+                    </li>
+                    <li>
+                        He is the founding lead of several international research collaborations, including the Centre
+                        for Eyecare and Public Health Intervention Initiative (CEPHII), which advances equitable eye
+                        care and health systems research.
+                    </li>
+                    <li>
+                        His contributions to research leadership and capacity building have been recognised through
+                        multiple national and international awards, including the 2022 Fellowship Award of the American
+                        Academy of Optometry.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/uchechukwu-levi-osuagwu-b368421a/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Uchechukwu Levi Osuagwu's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="hassan-awada-bio" class="modal hidden">
+        <div class="modal-content p-8 max-w-2xl">
+            <button class="close-modal" onclick="closeModal('hassan-awada-bio')">×</button>
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="Images/hassan-awada.jpg" alt="Hassan Awada"
+                    class="w-24 h-24 rounded-full object-cover object-top shadow-lg mb-4">
+                <h3 class="text-2xl font-bold gopha-primary-blue">Hassan Awada</h3>
+                <p class="gopha-accent-blue font-medium">Middle East & Eastern Mediterranean Representative</p>
+            </div>
+            <div class="max-w-none text-gray-700 leading-relaxed">
+                <ul class="list-disc pl-5 space-y-4">
+                    <li>
+                        Mr. Hassan Awada is an optometrist and ocularist with extensive clinical and leadership
+                        experience across the Middle East and Europe. He holds a Bachelor’s degree in Optometry from the
+                        University of Paris and runs specialized ocularist practices in both Nice and Beirut.
+                    </li>
+                    <li>
+                        Working across eight countries in the Middle East, Mr. Awada focuses on advanced eye care,
+                        prosthetic eye services, and improving access to quality optometry in the region.
+                    </li>
+                    <li>
+                        He is the former President and current Director General of the Eastern Mediterranean Council of
+                        Optometry (EMCO), where he has played a key role in professional development, education, and
+                        regional collaboration.
+                    </li>
+                    <li>
+                        Mr. Awada has also served on the Executive Committee of the World Council of Optometry (WCO),
+                        contributing to global strategies for vision care and professional standards.
+                    </li>
+                    <li>
+                        In addition, he represents GOPHA (Global Optometry Alliance) for the Eastern Mediterranean
+                        region, working to integrate optometry within public health and to address preventable vision
+                        impairment on a population level.
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.linkedin.com/in/hassan-awada-bb7a854b/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077b5] text-white hover:bg-[#005582] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    title="View Hassan Awada's LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fade in animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on load
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
